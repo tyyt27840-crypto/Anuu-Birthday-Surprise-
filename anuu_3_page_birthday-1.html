@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anuu's Birthday Surprise 💗</title>
+<style>
+:root{--pink:#d97899;--deep:#a94e70;--ink:#513944;--soft:#fff7fa}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;padding:18px;background:linear-gradient(145deg,#f6e1e9,#fff8fb 55%,#f2dce5);font-family:Georgia,serif;color:var(--ink);display:grid;place-items:center}
+.site{width:min(100%,470px);min-height:690px;background:#ffffffd9;border:1px solid white;border-radius:25px;box-shadow:0 18px 55px #9f557022;padding:22px 22px 28px;text-align:center;position:relative;overflow:hidden}
+.top{font:10px Arial,sans-serif;letter-spacing:2.5px;color:#b77b90;margin:12px 0 20px}
+h1{font-size:clamp(32px,8vw,44px);font-weight:normal;margin:12px 0;color:#563d48}
+.script{font-style:italic;color:var(--pink);font-size:24px}
+.teddy{font-size:53px;margin:17px 0}
+.page{display:none;animation:fade .45s ease}
+.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+.nav{display:flex;gap:7px;justify-content:center;margin:4px 0 18px}
+.dot{width:9px;height:9px;border-radius:50%;background:#efd3df}
+.dot.active{background:var(--deep);width:23px;border-radius:10px}
+.envelope-wrap{margin:28px auto 12px;width:250px;height:170px;position:relative;cursor:pointer}
+.envelope{position:absolute;inset:20px 0 0;background:#f4e8d8;border:2px solid #a78b7b;border-radius:7px}
+.envelope:before,.envelope:after{content:"";position:absolute;bottom:0;width:0;height:0;border-style:solid}
+.envelope:before{left:0;border-width:0 124px 85px 0;border-color:transparent #fff8ee transparent transparent}
+.envelope:after{right:0;border-width:0 0 85px 124px;border-color:transparent transparent transparent #f8f0e4}
+.flap{position:absolute;top:20px;left:0;width:0;height:0;border-left:125px solid transparent;border-right:125px solid transparent;border-top:92px solid #e8d5c2;transform-origin:top;transition:transform .7s;z-index:3}
+.seal{position:absolute;z-index:4;left:50%;top:83px;transform:translateX(-50%);width:48px;height:48px;border-radius:50%;background:#c75d80;color:white;display:grid;place-items:center;font-size:24px}
+.open .flap{transform:rotateX(180deg);z-index:0}.open .seal{opacity:0}
+.letter{background:#fffdfd;border:1px solid #f0dce4;border-radius:17px;padding:20px;margin:18px 0;line-height:1.8;text-align:left;box-shadow:0 8px 25px #9f557018}
+.letter h2{text-align:center;color:var(--deep);font-weight:normal;margin:0 0 12px}
+.letter p{margin:10px 0}
+.signature{text-align:right;color:var(--deep);font-style:italic}
+.brother{background:linear-gradient(150deg,#fff8fb,#f9e8ef);border-radius:18px;padding:20px;line-height:1.8;margin:20px 0;text-align:left}
+.photo-box{border:2px dashed #dfa9bd;border-radius:20px;padding:18px;margin:18px 0;background:#fff9fb}
+.preview{width:100%;max-height:310px;object-fit:contain;border-radius:14px;display:none;margin-top:14px}
+input[type=file]{max-width:100%;font:13px Arial,sans-serif;color:#765464}
+button{border:0;background:#c75d80;color:white;padding:12px 20px;border-radius:30px;font-size:14px;cursor:pointer;box-shadow:0 6px 16px #c75d8033}
+button.secondary{background:#f1dce5;color:#87445f;box-shadow:none}
+.buttons{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.small{font:11px Arial,sans-serif;color:#a17b89;margin-top:22px}
+.hearts{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.heart{position:absolute;bottom:-25px;color:#df8eaa;opacity:.55;animation:float 9s linear infinite}
+@keyframes float{to{transform:translateY(-760px) rotate(35deg);opacity:0}}
+</style>
+</head>
+<body>
+<main class="site" id="site">
+<div class="hearts" id="hearts"></div>
+<div class="top">♡ MADE WITH SO MUCH LOVE ♡</div>
+<div class="nav" aria-label="Pages"><span class="dot active"></span><span class="dot"></span><span class="dot"></span></div>
+
+<section class="page active" id="p1">
+  <h1>Happy Birthday, Anuu!</h1>
+  <div class="script">For my sweetest sister ♡</div>
+  <div class="teddy">🧸🎂</div>
+  <p>আজকের দিনটা শুধু তোর জন্য! 💗</p>
+  <div class="envelope-wrap" id="envelope" role="button" tabindex="0" aria-label="Open birthday letter">
+    <div class="envelope"></div><div class="flap"></div><div class="seal">♡</div>
+  </div>
+  <p class="small">খামের হার্টে টাচ কর, Anuu 💌</p>
+  <div class="letter" id="letter" hidden>
+    <h2>Happy Birthday, Anika! 💗</h2>
+    <p>শুভ জন্মদিন, আমার আদরের Anuu! 🎂</p>
+    <p>তোর জীবনের প্রতিটা দিন আনন্দ, হাসি আর সুন্দর সুন্দর মুহূর্তে ভরে উঠুক। তোর সব ভালো স্বপ্ন একদিন সত্যি হোক। সবসময় এমনই হাসিখুশি থাকিস।</p>
+    <p class="signature">অনেক আদর রইল, তোর ভাইয়ের পক্ষ থেকে ♡</p>
+  </div>
+  <div class="buttons"><button onclick="showPage(2)">পরের পেজ →</button></div>
+</section>
+
+<section class="page" id="p2">
+  <h1>একটা কথা, Anuu…</h1>
+  <div class="script">From your brother ♡</div>
+  <div class="teddy">🫶🏻🌷</div>
+  <div class="brother">
+    <p>তুই শুধু আমার বোন না, তুই আমার অনেক কাছের একজন মানুষ—আমার ছোট্ট best friend।</p>
+    <p>মাঝে মাঝে হয়তো দুষ্টুমি করি, ঝগড়া করি, তোকে বিরক্তও করি; কিন্তু তোর জন্য আমার ভালোবাসা আর যত্ন সবসময় থাকবে।</p>
+    <p>জীবনে যত দূরেই যাস, মনে রাখিস—তোর পাশে একজন ভাই সবসময় আছে। তোর মুখের হাসিটা সবসময় এমনই থাকুক।</p>
+    <p style="text-align:right;color:#a94e70;font-style:italic">ইতি, তোর ভাই 💗</p>
+  </div>
+  <div class="buttons"><button class="secondary" onclick="showPage(1)">← আগের পেজ</button><button onclick="showPage(3)">ছবির পেজ →</button></div>
+</section>
+
+<section class="page" id="p3">
+  <h1>Our Sweet Memory 📸</h1>
+  <div class="script">A little photo for Anuu</div>
+  <div class="teddy">🌸💗🌸</div>
+  <p>এখানে Anuu-র একটা সুন্দর ছবি যোগ কর।</p>
+  <div class="photo-box">
+    <label for="photo">ছবি বেছে নে</label><br><br>
+    <input id="photo" type="file" accept="image/*">
+    <img id="preview" class="preview" alt="Your selected photo">
+    <p class="small">ছবিটা শুধু এই ব্রাউজারেই দেখা যাবে; ওয়েবসাইটে সবার জন্য দেখাতে হলে ছবিটা আলাদাভাবে আপলোড করতে হবে।</p>
+  </div>
+  <p>Stay happy, stay blessed, Anuu! 🎀</p>
+  <div class="buttons"><button class="secondary" onclick="showPage(2)">← আগের পেজ</button><button onclick="showPage(1)">আবার শুরু 💌</button></div>
+</section>
+<div class="small">Made with sibling love ♡</div>
+</main>
+<script>
+function showPage(n){
+ document.querySelectorAll('.page').forEach((p,i)=>p.classList.toggle('active',i===n-1));
+ document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===n-1));
+ document.getElementById('site').scrollIntoView({behavior:'smooth',block:'start'});
+}
+const envelope=document.getElementById('envelope');
+function openLetter(){envelope.classList.add('open');document.getElementById('letter').hidden=false;}
+envelope.addEventListener('click',openLetter);
+envelope.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLetter();}});
+document.getElementById('photo').addEventListener('change',e=>{
+ const file=e.target.files&&e.target.files[0];if(!file)return;
+ const preview=document.getElementById('preview');preview.src=URL.createObjectURL(file);preview.style.display='block';
+});
+const hearts=document.getElementById('hearts');
+for(let i=0;i<14;i++){const h=document.createElement('span');h.className='heart';h.textContent='♥';h.style.left=(Math.random()*100)+'%';h.style.animationDelay=(Math.random()*8)+'s';h.style.animationDuration=(7+Math.random()*5)+'s';h.style.fontSize=(12+Math.random()*15)+'px';hearts.appendChild(h);}
+</script>
+</body>
+</html>
